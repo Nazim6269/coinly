@@ -1,3 +1,4 @@
+import 'package:coinly/shared/features/presentation/screens/add_expense_screen.dart';
 import 'package:flutter/material.dart';
 
 class QuickAddFab extends StatelessWidget {
@@ -7,8 +8,9 @@ class QuickAddFab extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        // TODO: navigate to Add Expense screen — next step in Phase 1
-        debugPrint('Quick add tapped');
+        Navigator.of(
+          context,
+        ).push(MaterialPageRoute(builder: (_) => const AddExpenseScreen()));
       },
       child: const Icon(Icons.add),
     );

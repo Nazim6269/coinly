@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../shared/widgets/dashed_divider.dart';
 import '../../../../shared/features/presentation/providers/expense_providers.dart';
-import 'expense_tile.dart';
+import '../../../../shared/features/presentation/widgets/expense_tile.dart';
 
 class RecentExpensesList extends ConsumerWidget {
   const RecentExpensesList({super.key});
