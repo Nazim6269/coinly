@@ -1,6 +1,6 @@
+import 'package:coinly/shared/widgets/generic-button/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/theme/app_colors.dart';
 import '../../domain/entities/expense.dart';
 import '../providers/add_expense_form_provider.dart';
 import '../providers/expense_providers.dart';
@@ -14,7 +14,7 @@ class SaveExpenseButton extends ConsumerWidget {
 
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
+      child: GenericButton(
         onPressed: !form.isValid
             ? null
             : () async {
@@ -34,18 +34,8 @@ class SaveExpenseButton extends ConsumerWidget {
                 ref.read(addExpenseFormProvider.notifier).reset();
                 if (context.mounted) Navigator.of(context).pop();
               },
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryAccent,
-          foregroundColor: AppColors.inkNavy,
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        child: const Text(
-          'Save Expense',
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
-        ),
+
+        text: "Save expense",
       ),
     );
   }

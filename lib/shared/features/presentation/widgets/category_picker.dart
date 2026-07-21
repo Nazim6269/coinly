@@ -20,7 +20,7 @@ class CategoryPicker extends ConsumerWidget {
           label: Text(category.label),
           selected: isSelected,
           selectedColor: AppColors.primaryAccent,
-          backgroundColor: AppColors.surface.withOpacity(0.1),
+          backgroundColor: AppColors.inkNavy,
           labelStyle: TextStyle(
             color: isSelected ? AppColors.inkNavy : AppColors.textOnDark,
             fontWeight: FontWeight.w600,
