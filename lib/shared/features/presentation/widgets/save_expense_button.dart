@@ -17,26 +17,33 @@ class SaveExpenseButton extends ConsumerWidget {
       child: GenericButton(
         onPressed: !form.isValid
             ? null
-            : () async {
-                final expense = Expense(
-                  id: DateTime.now().microsecondsSinceEpoch.toString(),
-                  amount: form.amount!,
-                  currencyCode: form.currencyCode,
-                  category: form.category,
-                  date: form.date,
-                  note: form.note.isEmpty ? null : form.note,
-                  // TODO: real conversion via exchange-rate API in Phase 3.
-                  // Mocked 1:1 for now so the dashboard total still updates.
-                  amountInHomeCurrency: form.amount!,
-                );
-                await ref.read(addExpenseProvider)(expense);
-                ref.read(expensesRefreshProvider.notifier).bump();
-                ref.read(addExpenseFormProvider.notifier).reset();
-                if (context.mounted) Navigator.of(context).pop();
-              },
+            : () => _handleSaveExpense(context, ref, form),
 
         text: "Save expense",
       ),
     );
+  }
+
+  //*********** Helper Methods*********
+  Future<void> _handleSaveExpense(
+    BuildContext context,
+    WidgetRef ref,
+    AddExpenseFormState form,
+  ) async {
+    final expense = Expense(
+      id: DateTime.now().microsecondsSinceEpoch.toString(),
+      amount: form.amount!,
+      currencyCode: form.currencyCode,
+      category: form.category,
+      date: form.date,
+      note: form.note.isEmpty ? null : form.note,
+      // TODO: real conversion via exchange-rate API in Phase 3.
+      // Mocked 1:1 for now so the dashboard total still updates.
+      amountInHomeCurrency: form.amount!,
+    );
+    await ref.read(addExpenseProvider)(expense);
+    ref.read(expensesRefreshProvider.notifier).bump();
+    ref.read(addExpenseFormProvider.notifier).reset();
+    if (context.mounted) Navigator.of(context).pop();
   }
 }
