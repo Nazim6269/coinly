@@ -5,7 +5,7 @@ class AppColors {
 
   static const Color inkNavy = Color(0xFF16243A);
   static const Color warmPaper = Color(0xFFF7F2E9);
-  static const Color marigold = Color(0xFFE8A33D);
+  static const Color marigold = Color(0xFFFFBB1C);
   static const Color passportTeal = Color(0xFF3F8577);
   static const Color brick = Color(0xFFC0503E);
   static const Color offWhite = Color(0xFFEDEAE2);
