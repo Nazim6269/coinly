@@ -1,3 +1,4 @@
+import 'package:coinly/features/dashboard/presentation/screens/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../shared/widgets/generic-button/button.dart';
@@ -17,7 +18,9 @@ class OnboardingContinueButton extends ConsumerWidget {
         onPressed: selected == null
             ? null
             : () {
-                debugPrint('Selected home currency: ${selected.code}');
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (_) => const DashboardScreen()),
+                );
               },
         widthMode: ButtonWidthMode.fullWidth,
         size: ButtonSize.large,
