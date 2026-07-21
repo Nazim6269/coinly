@@ -1,4 +1,4 @@
-import '../entities/expense.dart';
+import '../../../../shared/features/domain/entities/expense.dart';
 import '../repositories/expense_repository.dart';
 
 class GetRecentExpenses {
