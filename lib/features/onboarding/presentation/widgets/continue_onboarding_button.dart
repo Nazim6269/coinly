@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../shared/widgets/generic-button/button.dart';
 import '../providers/onboarding_providers.dart';
 
 class OnboardingContinueButton extends ConsumerWidget {
@@ -10,30 +11,21 @@ class OnboardingContinueButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final selected = ref.watch(selectedHomeCurrencyProvider);
 
-    return SizedBox(
-      width: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        child: ElevatedButton(
-          onPressed: selected == null
-              ? null
-              : () {
-                  // TODO: persist via usecase in Phase 2 (Supabase)
-                  debugPrint('Selected home currency: ${selected.code}');
-                },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryAccent,
-            foregroundColor: AppColors.inkNavy,
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          child: const Text(
-            'Continue',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
-          ),
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      child: GenericButton(
+        text: 'Continue',
+        onPressed: selected == null
+            ? null
+            : () {
+                debugPrint('Selected home currency: ${selected.code}');
+              },
+        widthMode: ButtonWidthMode.fullWidth,
+        size: ButtonSize.large,
+        backgroundColor: AppColors.primaryAccent,
+        foregroundColor: AppColors.inkNavy,
+        textStyle: const TextStyle(fontWeight: FontWeight.w600),
+        variant: ButtonVariant.danger,
       ),
     );
   }
