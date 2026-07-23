@@ -190,8 +190,8 @@ class _GenericButtonState extends State<GenericButton> {
                   onHighlightChanged: (pressed) =>
                       setState(() => _pressed = pressed),
                   borderRadius: style.borderRadius,
-                  splashColor: style.foreground.withOpacity(
-                    ButtonConstants.rippleOpacity,
+                  splashColor: style.foreground.withValues(
+                    alpha: ButtonConstants.rippleOpacity,
                   ),
                   highlightColor: Colors.transparent,
                   child: AnimatedContainer(
@@ -216,7 +216,7 @@ class _GenericButtonState extends State<GenericButton> {
                           (style.elevation > 0
                               ? [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.15),
+                                    color: Colors.black.withValues(alpha: 0.15),
                                     blurRadius: style.elevation * 2,
                                     offset: Offset(0, style.elevation / 2),
                                   ),

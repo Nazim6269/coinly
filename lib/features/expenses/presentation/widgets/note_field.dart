@@ -12,9 +12,9 @@ class NoteField extends ConsumerWidget {
       style: const TextStyle(color: AppColors.textOnDark),
       decoration: InputDecoration(
         hintText: 'Add a note (optional)',
-        hintStyle: TextStyle(color: AppColors.textOnDark.withOpacity(0.4)),
+        hintStyle: TextStyle(color: AppColors.textOnDark.withValues(alpha: 0.4)),
         filled: true,
-        fillColor: AppColors.surface.withOpacity(0.1),
+        fillColor: AppColors.surface.withValues(alpha: 0.1),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

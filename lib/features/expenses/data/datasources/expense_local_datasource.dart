@@ -66,4 +66,9 @@ class ExpenseLocalDataSource {
     _expenses.add(expense);
     return expense;
   }
+
+  Future<List<ExpenseModel>> getAllExpenses() async {
+    final sorted = [..._expenses]..sort((a, b) => b.date.compareTo(a.date));
+    return sorted;
+  }
 }

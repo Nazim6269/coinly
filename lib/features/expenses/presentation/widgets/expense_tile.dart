@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../shared/features/domain/entities/expense.dart';
-import '../../../../shared/features/domain/entities/expense_category.dart';
+import '../../domain/entities/expense.dart';
+import '../../domain/entities/expense_category.dart';
 
-IconData _iconForCategory(ExpenseCategory category) {
-  switch (category) {
-    case ExpenseCategory.food:
-      return Icons.restaurant;
-    case ExpenseCategory.transport:
-      return Icons.directions_car;
-    case ExpenseCategory.accommodation:
-      return Icons.bed;
-    case ExpenseCategory.shopping:
-      return Icons.shopping_bag;
-    case ExpenseCategory.entertainment:
-      return Icons.celebration;
-    case ExpenseCategory.other:
-      return Icons.more_horiz;
-  }
-}
+IconData _iconForCategory(ExpenseCategory category) => switch (category) {
+  ExpenseCategory.food => Icons.restaurant,
+  ExpenseCategory.transport => Icons.directions_car,
+  ExpenseCategory.accommodation => Icons.bed,
+  ExpenseCategory.shopping => Icons.shopping_bag,
+  ExpenseCategory.entertainment => Icons.celebration,
+  ExpenseCategory.other => Icons.more_horiz,
+};
 
 class ExpenseTile extends StatelessWidget {
   final Expense expense;
@@ -34,7 +26,7 @@ class ExpenseTile extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-            backgroundColor: AppColors.primaryAccent.withOpacity(0.15),
+            backgroundColor: AppColors.primaryAccent.withValues(alpha: 0.15),
             child: Icon(
               _iconForCategory(expense.category),
               color: AppColors.primaryAccent,
@@ -56,7 +48,7 @@ class ExpenseTile extends StatelessWidget {
                 Text(
                   dateFormat.format(expense.date),
                   style: TextStyle(
-                    color: AppColors.textOnDark.withOpacity(0.5),
+                    color: AppColors.textOnDark.withValues(alpha: 0.5),
                     fontSize: 12,
                   ),
                 ),

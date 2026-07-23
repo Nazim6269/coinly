@@ -14,7 +14,7 @@ class CurrencyPickerField extends ConsumerWidget {
 
     return currenciesAsync.when(
       loading: () => const SizedBox.shrink(),
-      error: (_, __) => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
       data: (currencies) => DropdownButton<String>(
         value: form.currencyCode,
         dropdownColor: AppColors.surface,

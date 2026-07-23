@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../shared/widgets/dashed_divider.dart';
-import '../../../../shared/features/presentation/providers/expense_providers.dart';
-import '../../../../shared/features/presentation/widgets/expense_tile.dart';
+import '../../../expenses/presentation/providers/expense_providers.dart';
+import '../../../expenses/presentation/widgets/expense_tile.dart';
 
 class RecentExpensesList extends ConsumerWidget {
   const RecentExpensesList({super.key});
@@ -22,7 +22,7 @@ class RecentExpensesList extends ConsumerWidget {
         }
         return ListView.separated(
           itemCount: expenses.length,
-          separatorBuilder: (_, __) => const DashedDivider(),
+          separatorBuilder: (_, _) => const DashedDivider(),
           itemBuilder: (context, index) =>
               ExpenseTile(expense: expenses[index]),
         );

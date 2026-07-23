@@ -125,8 +125,8 @@ class ButtonStyleResolver {
     };
     if (overlayOpacity == 0.0) return base;
     final overlayColor = base.computeLuminance() > 0.5
-        ? Colors.black.withOpacity(overlayOpacity)
-        : Colors.white.withOpacity(overlayOpacity);
+        ? Colors.black.withValues(alpha: overlayOpacity)
+        : Colors.white.withValues(alpha: overlayOpacity);
     return Color.alphaBlend(overlayColor, base);
   }
 }

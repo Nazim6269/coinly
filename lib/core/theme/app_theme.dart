@@ -30,7 +30,7 @@ class AppTheme {
         bodyLarge: GoogleFonts.inter(fontSize: 16, color: AppColors.textOnDark),
         bodyMedium: GoogleFonts.inter(
           fontSize: 14,
-          color: AppColors.textOnDark.withOpacity(0.8),
+          color: AppColors.textOnDark.withValues(alpha: 0.8),
         ),
         titleLarge: GoogleFonts.jetBrainsMono(
           fontSize: 24,

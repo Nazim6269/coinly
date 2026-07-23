@@ -19,7 +19,7 @@ class DashedDivider extends StatelessWidget {
               child: Container(
                 width: dashWidth,
                 height: 1,
-                color: AppColors.textOnDark.withOpacity(0.15),
+                color: AppColors.textOnDark.withValues(alpha: 0.15),
               ),
             );
           }),

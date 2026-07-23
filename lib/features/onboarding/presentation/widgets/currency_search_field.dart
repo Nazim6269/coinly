@@ -13,9 +13,9 @@ class CurrencySearchField extends ConsumerWidget {
       style: const TextStyle(color: AppColors.textOnDark),
       decoration: InputDecoration(
         hintText: 'Search currency (e.g. USD, Euro)',
-        hintStyle: TextStyle(color: AppColors.textOnDark.withOpacity(0.5)),
+        hintStyle: TextStyle(color: AppColors.textOnDark.withValues(alpha: 0.5)),
         filled: true,
-        fillColor: AppColors.surface.withOpacity(0.1),
+        fillColor: AppColors.surface.withValues(alpha: 0.1),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

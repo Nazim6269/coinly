@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../expenses/presentation/providers/expense_providers.dart';
 import '../../../onboarding/presentation/providers/onboarding_providers.dart';
-import '../../../../shared/features/presentation/providers/expense_providers.dart';
 
 class TotalSpendCard extends ConsumerWidget {
   const TotalSpendCard({super.key});
@@ -23,7 +23,7 @@ class TotalSpendCard extends ConsumerWidget {
             Text(
               'This month',
               style: TextStyle(
-                color: AppColors.textOnLight.withOpacity(0.6),
+                color: AppColors.textOnLight.withValues(alpha: 0.6),
                 fontSize: 14,
               ),
             ),

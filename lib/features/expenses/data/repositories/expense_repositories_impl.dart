@@ -30,5 +30,9 @@ class ExpenseRepositoryImpl implements ExpenseRepository {
     );
     return localDataSource.addExpense(model);
   }
-}
 
+  @override
+  Future<List<Expense>> getAllExpenses() {
+    return localDataSource.getAllExpenses();
+  }
+}

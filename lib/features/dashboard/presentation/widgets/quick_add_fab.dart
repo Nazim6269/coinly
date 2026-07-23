@@ -1,5 +1,6 @@
-import 'package:coinly/shared/features/presentation/screens/add_expense_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../../expenses/presentation/screens/add_expense_screen.dart';
 
 class QuickAddFab extends StatelessWidget {
   const QuickAddFab({super.key});

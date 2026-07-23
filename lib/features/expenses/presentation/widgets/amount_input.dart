@@ -24,7 +24,7 @@ class AmountInput extends ConsumerWidget {
             decoration: InputDecoration(
               hintText: '0.00',
               hintStyle: TextStyle(
-                color: AppColors.textOnDark.withOpacity(0.3),
+                color: AppColors.textOnDark.withValues(alpha: 0.3),
               ),
               border: InputBorder.none,
             ),

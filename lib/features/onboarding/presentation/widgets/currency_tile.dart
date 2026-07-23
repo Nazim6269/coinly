@@ -39,7 +39,7 @@ class CurrencyTile extends StatelessWidget {
         ),
         subtitle: Text(
           currency.code,
-          style: TextStyle(color: AppColors.inkNavy.withOpacity(0.6)),
+          style: TextStyle(color: AppColors.inkNavy.withValues(alpha: 0.6)),
         ),
         trailing: isSelected
             ? const Icon(Icons.check_circle, color: AppColors.inkNavy)

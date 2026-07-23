@@ -1,5 +1,5 @@
-import 'package:coinly/shared/features/domain/entities/expense.dart';
-import 'package:coinly/shared/features/domain/repositories/expense_repository.dart';
+import '../entities/expense.dart';
+import '../repositories/expense_repository.dart';
 
 class AddExpense {
   final ExpenseRepository repository;

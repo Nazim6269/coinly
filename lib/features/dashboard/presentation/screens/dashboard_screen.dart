@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../expenses/presentation/screens/expense_history_screen.dart';
 import '../widgets/total_spend_card.dart';
 import '../widgets/recent_expenses_list.dart';
 import '../widgets/quick_add_fab.dart';
@@ -9,7 +10,19 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Coinly')),
+      appBar: AppBar(
+        title: const Text('Coinly'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.history),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const ExpenseHistoryScreen()),
+              );
+            },
+          ),
+        ],
+      ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(
